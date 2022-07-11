@@ -1,0 +1,5 @@
+ipython
+black
+isort
+mypy
+types-paramiko
