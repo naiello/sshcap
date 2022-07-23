@@ -1,0 +1,8 @@
+[Unit]
+Description=ssh capture daemon
+
+[Service]
+ExecStart=/usr/bin/python3.8 /opt/sshcap/sshcap.py --log-file /var/log/sshcap.log --server-key /opt/sshcap/sshcap.key
+
+[Install]
+WantedBy=multi-user.target

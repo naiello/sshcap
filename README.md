@@ -16,6 +16,19 @@ sudo python3.8 sshcap.py  # root is required to bind to port 22 on many linux sy
 python3.8 --port 2222     # high-numbered ports generally do not require root
 ```
 
+### Running as a systemd service
+
+Copy `sshcap.service` to `/etc/systemd/system/sshcap.service`.
+The unit file assumes sshcap is installed in `/opt/sshcap`. If it is not, modify the file
+to point to the correct install dir.
+
+```
+sudo systemctl daemon-reload
+sudo systemctl start sshcap
+sudo systemctl status sshcap  # verify everything started correctly
+sudo systemctl enable sshcap  # start at system boot
+```
+
 ## Usage
 
 ```
